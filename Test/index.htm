@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>TODO</h1>
+      <form id="TaskForm">
+        <input type="text" name="UserInput" id="UserInput" />
+        <input type="submit" />
+      </form>
+    </header>
+    <div id="Menu">
+      <label for="ShowCompleted">Show Completed Tasks</label>
+      <input type="checkbox" name="ShowCompleted" id="ShowCompleted" />
+      <label for="SortBy">Sort By:</label>
+      <select name="SortBy" id="SortBy">
+        <option value="TimeAsc">Date Added: Ascending</option>
+        <option value="TimeDesc">Date Added: Descending</option>
+        <option value="AlphaAsc">Alphabetically: Ascending</option>
+        <option value="AlphaDesc">Alphabetically: Descending</option>
+      </select>
+    </div>
+    <div id="ListContainer"></div>
+  </body>
+</html>
