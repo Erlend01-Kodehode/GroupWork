@@ -1,0 +1,24 @@
+[START]
+ Group Log:
+    Monday:
+        Decided on Dictator for Life (Me)
+        Created Github Repo
+            Invited Collaborators
+            Created Test Branch
+        Created Individual Figma Files
+        Created Discord GC
+        Discussed Figma Designs
+
+    Tuesday:
+        TODO
+
+    Wednesday:
+        TODO
+
+    Thursday:
+        TODO
+
+    Friday:
+        TODO
+
+[END]
