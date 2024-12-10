@@ -8,21 +8,28 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div id="BodyDiv" class="Column">
-      <div id="HeaderDiv" class="Row JustifyCenter">
-        <header>
-          <h2>Christmas Wishlist</h2>
-        </header>
+    <div id="HeaderDiv">
+      <h1>Christmas Wishlist</h1>
+    </div>
+
+    <div id="WishlistDiv">
+      <div id="WishlistTitle">
+        <h2>Wishlist</h2>
       </div>
-      <div id="ContentDiv" class="Column">
-        <div id="WishlistDiv" class="Column">
-          <div id="WishlistTitle" class="Row JustifyCenter">
-            <h2>Wishlist</h2>
-          </div>
-          <div id="WishlistButtons" class="Row JustifyCenter">
-            <button>Share</button><button>Add</button>
-          </div>
-          <div id="WishlistItems"></div>
+
+      <div id="WishlistButtons">
+        <button id="WishlistButtonShare">Share</button>
+        <button id="WishlistButtonAdd">+ Add</button>
+      </div>
+
+      <div id="WishlistItemsContainer">
+        <div class="WishlistItem">
+          <button id="MoveButton"><img src="" alt="" /></button>
+          <p id="Number">1.</p>
+          <!-- <input id="TextField" type="text"> -->
+          <form id="TextField">Heilage Håkon</form>
+          <button id="ButtonEdit">Edit</button>
+          <button id="ButtonDelete">Delete</button>
         </div>
       </div>
     </div>
