@@ -28,6 +28,42 @@
   justify-content: center;
 }
 
+/* Images position */
+
+.ImageTop img {
+  position: absolute;
+  width: 997px;
+  height: 232px;
+  top: 110px;
+  left: 221px;
+}
+
+.ImageLeft img {
+  position: absolute;
+  width: 278px;
+  height: 977px;
+  top: 66px;
+  left: -66px;
+}
+
+.ImageRight img {
+  position: absolute;
+  width: 278px;
+  margin-left: 100px;
+  height: 977px;
+  top: 105px;
+  right: 0;
+  transform: rotate(-180deg);
+}
+
+.ImageRight2 img {
+  width: 175px;
+  height: 168px;
+  top: 105px;
+  left: 1340px;
+  margin-left: 1400px;
+}
+
 /* Identifiers (IDs) */
 #HeaderDiv {
   height: 120px;
