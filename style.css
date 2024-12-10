@@ -1,26 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+
+/* General CSS */
+
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-div {
-  display: flex;
-  min-width: 50px;
-  min-height: 50px;
-  border: solid 1px;
-  margin: 6px;
-}
+/* Classes */
 
 .Row {
   display: flex;
   flex-direction: row;
 }
+
 .Column {
   display: flex;
   flex-direction: column;
 }
+
 .AlignCenter {
   align-items: center;
 }
+
 .JustifyCenter {
   justify-content: center;
+}
+
+/* Identifiers (IDs) */
+#HeaderDiv {
+  height: 120px;
+  width: auto;
+  background-color: #f01e1e;
+}
+
+#HeaderDiv h2 {
+  margin-top: 24px;
+  font-family: "Italianno", cursive;
+  font-size: 70px;
+  color: #fff;
 }
