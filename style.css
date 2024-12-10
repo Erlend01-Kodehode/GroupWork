@@ -6,6 +6,8 @@
 
 body {
   background-color: #ffe6e6;
+  display: flex;
+  flex-direction: column;
 }
 
 .Button {
@@ -21,6 +23,10 @@ body {
 }
 .JustifyCenter {
   justify-content: center;
+}
+
+.DialogueWindow {
+  margin: auto;
 }
 
 /* Images position */
