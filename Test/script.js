@@ -137,6 +137,7 @@ function buildList(taskArr) {
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.classList.add("DeleteButton");
+    // Doesn't work quite right
     deleteButton.addEventListener("click", () => {
       if (tasks.length === 1) {
         console.log(tasks);
