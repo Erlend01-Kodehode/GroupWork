@@ -1,1 +1,1 @@
-Force Github no notice the Images folder exists
+Force Github to notice the Images folder exists
