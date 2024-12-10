@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+div {
+  display: flex;
+  min-width: 50px;
+  min-height: 50px;
+  border: solid 1px;
+  margin: 6px;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+}
+.Column {
+  display: flex;
+  flex-direction: column;
+}
+.AlignCenter {
+  align-items: center;
+}
+.JustifyCenter {
+  justify-content: center;
+}
