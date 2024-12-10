@@ -10,8 +10,8 @@ function showSubmitWindow() {
   // Classes
   modal.classList.add("DialogueWindow");
   inputField.classList.add("InputClass");
-  submitInput.classList.add("ButtonClass");
-  cancelInput.classList.add("ButtonClass");
+  submitInput.classList.add("Button");
+  cancelInput.classList.add("Button");
 
   inputField.placeholder = "Your Wish";
   submitInput.textContent = "Submit";
@@ -30,4 +30,4 @@ function showSubmitWindow() {
   });
 }
 
-// showSubmitWindow();
+showSubmitWindow();
