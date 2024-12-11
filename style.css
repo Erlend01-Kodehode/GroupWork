@@ -5,9 +5,16 @@
 }
 
 body {
+<<<<<<< Updated upstream
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
   background-color: #FFE6E6;
+=======
+  background-color: #ffe6e6;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+>>>>>>> Stashed changes
 }
 
 .Button {
@@ -20,7 +27,53 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< Updated upstream
   cursor: pointer;
+=======
+}
+.JustifyCenter {
+  justify-content: center;
+}
+
+.DialogueWindow {
+  margin: auto;
+}
+
+/* Images position */
+
+#DecorationsTop {
+  /* height: 232px; */
+  /* width: 997px; */
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  position: absolute;
+}
+
+#LightsLeft {
+  top: 30px;
+  left: -50px;
+  height: 1000px;
+  z-index: -1;
+  position: absolute;
+}
+
+#LightsRight {
+  top: 80px;
+  right: 0px;
+  height: 1000px;
+  z-index: -1;
+  transform: rotate(-180deg);
+  position: absolute;
+}
+
+#Ribbon {
+  top: 30px;
+  right: -50px;
+  height: 200px;
+  position: absolute;
+>>>>>>> Stashed changes
 }
 
 #HeaderDiv {
@@ -46,12 +99,14 @@ body {
   height: 75vh;
   width: 750px;
   padding: 15px;
-  margin: auto;
-  margin-top: 40px;
+  top: 140px;
+  left: 50%;
+  transform: translateX(-50%);
   gap: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
 }
 
 #WishlistTitle {
@@ -90,7 +145,23 @@ body {
   display: flex;
 }
 
+<<<<<<< Updated upstream
 #MoveButton {
+=======
+.MoveButton {
+  border: solid 1px black;
+  border-radius: 5px;
+  height: 15px;
+  min-width: 30px;
+  max-width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1px;
+}
+
+/* #MoveButtonUp {
+>>>>>>> Stashed changes
   border: solid 1px black;
   border-radius: 5px;
   height: 30px;
