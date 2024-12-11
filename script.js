@@ -1,4 +1,11 @@
+const addWishButton = document.querySelector("#WishlistButtonAdd");
+
 let wishes = []; // Arr for storing wishes
+
+// Open submit modal
+addWishButton.addEventListener("click", () => {
+  showSubmitWindow();
+});
 
 // Modal window where you input wishes
 function showSubmitWindow() {
@@ -31,4 +38,4 @@ function showSubmitWindow() {
 }
 
 // Force Event
-showSubmitWindow();
+// showSubmitWindow();
