@@ -5,16 +5,12 @@
 }
 
 body {
-<<<<<<< Updated upstream
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
-  background-color: #FFE6E6;
-=======
   background-color: #ffe6e6;
   display: flex;
   flex-direction: column;
   overflow: hidden;
->>>>>>> Stashed changes
 }
 
 .Button {
@@ -27,10 +23,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< Updated upstream
   cursor: pointer;
-=======
 }
+
 .JustifyCenter {
   justify-content: center;
 }
@@ -145,9 +140,6 @@ body {
   display: flex;
 }
 
-<<<<<<< Updated upstream
-#MoveButton {
-=======
 .MoveButton {
   border: solid 1px black;
   border-radius: 5px;
@@ -171,7 +163,7 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
+} */
 
 #Number {
   font-size: 20px;
@@ -200,7 +192,6 @@ body {
 #ButtonDelete {
   background-color: #FF4B4B;
 }
-
 
 ::-webkit-scrollbar {
   width: 10px;
