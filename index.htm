@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wishlist</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Italianno"
+    />
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
   </head>
@@ -11,24 +19,18 @@
     <div id="HeaderDiv">
       <h1>Christmas Wishlist</h1>
     </div>
-    <div id="Images" class="Images">
-      <div class="ImageTop">
-        <img src="Images/top.png" alt="image top" />
-      </div>
-      <div class="ImageRight2">
-        <img src="Images/ribbon.png" alt="" />
-      </div>
-      <div class="ImageLeft">
-        <img src="Images/side.png" alt="left side" />
-      </div>
-      <div class="ImageRight">
-        <img src="Images/side.png" alt="right side" />
-      </div>
+
+    <!-- Decorations -->
+    <div>
+      <img src="./Images/decorations.png" id="DecorationsTop" />
+      <img src="./Images/ribbon.png" id="Ribbon" />
+      <img src="./Images/lights.png" alt="" id="LightsLeft" />
+      <img src="./Images/lights.png" id="LightsRight" />
     </div>
+
     <div id="WishlistDiv">
-      <div id="WishlistTitle">
-        <h2>Wishlist</h2>
-      </div>
+      <h2 id="WishlistTitle">Wishlist</h2>
+
       <div id="WishlistButtons">
         <button class="Button" id="WishlistButtonShare">Share</button>
         <button class="Button" id="WishlistButtonAdd">+ Add</button>
