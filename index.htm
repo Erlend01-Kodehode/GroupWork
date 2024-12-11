@@ -10,10 +10,10 @@
     <script defer src="script.js"></script>
   </head>
   <body>
+    <!-- Header -->
     <div id="HeaderDiv">
-      <h1>Christmas Wishlist</h1>
+      <p>Christmas Wishlist</p>
     </div>
-
     <!-- Decorations -->
     <div>
       <img src="./Images/decorations.png" id="DecorationsTop"/>
@@ -21,27 +21,28 @@
       <img src="./Images/lights.png" alt="" id="LightsLeft">
       <img src="./Images/lights.png" id="LightsRight"/>
     </div>
-
+    <!-- Wishlist -->
     <div id="WishlistDiv">
-      <h2 id="WishlistTitle">Wishlist</h2>
-
+      <!-- Wishlist title -->
+      <p id="WishlistTitle">Wishlist</p>
+      <!-- Share and add buttons -->
       <div id="WishlistButtons">
         <button class="Button" id="WishlistButtonShare">Share</button>
         <button class="Button" id="WishlistButtonAdd">+ Add</button>
       </div>
-
+      <!-- Container for wishes -->
       <div id="WishlistItemsContainer">
         <div class="WishlistItem">
-          <div>
-            <button id="MoveButtonUp" class="MoveButton">
-              <img src="" alt=""/>
-            </button>
-            <button id="MoveButtonDown" class="MoveButton">
-              <img src="" alt=""/>
-            </button>
+          <!-- Wish move up/down button -->
+          <div class="MoveButtonContainer">
+            <button id="MoveButtonUp" class="MoveButton"></button>
+            <button id="MoveButtonDown" class="MoveButton"></button>
           </div>
+          <!-- Wish number -->
           <p id="Number">1.</p>
+          <!-- Wish text field -->
           <form id="TextField">Heilage Håkon<br>forsen<br>fors</form>
+          <!-- Edit/delete buttons -->
           <button class="Button" id="ButtonEdit">Edit</button>
           <button class="Button" id="ButtonDelete">Delete</button>
         </div>
