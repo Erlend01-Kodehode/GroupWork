@@ -3,29 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Christmas Wishlist</title>
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <h1>TODO</h1>
-      <form id="TaskForm">
-        <input type="text" name="UserInput" id="UserInput" />
-        <input type="submit" />
-      </form>
+      <h1>Christmas Wishlist</h1>
     </header>
-    <div id="Menu">
-      <label for="ShowCompleted">Show Completed Tasks</label>
-      <input type="checkbox" name="ShowCompleted" id="ShowCompleted" />
-      <label for="SortBy">Sort By:</label>
-      <select name="SortBy" id="SortBy">
-        <option value="TimeAsc">Date Added: Ascending</option>
-        <option value="TimeDesc">Date Added: Descending</option>
-        <option value="AlphaAsc">Alphabetically: Ascending</option>
-        <option value="AlphaDesc">Alphabetically: Descending</option>
-      </select>
+    <div id="MainContainer">
+      <div class="wishlist-container">
+        <h2>My wishlist</h2>
+        <button class="share-button">Share</button>
+        <ul class="wishlist">
+          <li>
+            <span class="task-number">1.</span>
+            <input
+              class="task-name"
+              type="text"
+              value="Helige Håkon's bibel"
+              readonly
+            />
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </li>
+          <li>
+            <span class="task-number">2.</span>
+            <input
+              class="task-name"
+              type="text"
+              value="Helige Håkon's bibel"
+              readonly
+            />
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </li>
+          <li>
+            <span class="task-number">3.</span>
+            <input
+              class="task-name"
+              type="text"
+              value="Helige Håkon's bibel"
+              readonly
+            />
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div id="ListContainer"></div>
   </body>
 </html>

@@ -144,7 +144,7 @@ function buildList(taskArr) {
         console.log(tasks);
       } else {
         console.log(tasks);
-        tasks.splice(i, i);
+        tasks.splice(i, 1);
         console.log(tasks);
       }
       renderList(tasks);
