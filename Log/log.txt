@@ -25,6 +25,8 @@
         
     Wednesday:
         Regained some cohesion with Github repos
+        Restructured HTML/CSS
+        Progress with wishlist JS
 
     Thursday:
         TODO

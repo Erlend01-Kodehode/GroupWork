@@ -28,21 +28,6 @@ function showSubmitWindow() {
   submitInput.textContent = "Submit";
   cancelInput.textContent = "Cancel";
 
-  // Button hover effects
-  submitInput.addEventListener("mouseover", () => {
-    submitInput.style.backgroundColor = "#0056b3";
-  });
-  submitInput.addEventListener("mouseout", () => {
-    submitInput.style.backgroundColor = "#007BFF";
-  });
-
-  cancelInput.addEventListener("mouseover", () => {
-    cancelInput.style.backgroundColor = "#5a6268";
-  });
-  cancelInput.addEventListener("mouseout", () => {
-    cancelInput.style.backgroundColor = "#6c757d";
-  });
-
   // HTML Structure
   inputForm.append(inputField, submitInput);
   modal.append(inputForm, cancelInput);
