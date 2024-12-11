@@ -40,6 +40,66 @@ body {
   text-align: center;
   font-family: "Arial", sans-serif;
   z-index: 1000;
+  overflow: hidden;
+  margin-right: 370px;
+}
+
+/* Form Styles */
+.FormClass {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Input Field Styles */
+.InputClass {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.InputClass:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+/* Button Styles */
+.Button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.CancelButton {
+  margin-left: 262px;
+}
+
+.Button:first-of-type {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.Button:first-of-type:hover {
+  background-color: #0056b3;
+}
+
+.Button:last-of-type {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+.Button:last-of-type:hover {
+  background-color: #5a6268;
 }
 
 /* Images position */
