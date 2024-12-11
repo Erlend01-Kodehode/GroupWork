@@ -24,7 +24,7 @@
             Figma
         
     Wednesday:
-        TODO
+        Regained some cohesion with Github repos
 
     Thursday:
         TODO
