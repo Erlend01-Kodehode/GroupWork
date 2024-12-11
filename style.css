@@ -123,7 +123,6 @@ body {
 }
 
 #WishlistButtons {
-  border: solid 1px black;
   gap: 10px;
   display: flex;
 }
