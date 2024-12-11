@@ -21,6 +21,7 @@ function showSubmitWindow() {
   inputField.classList.add("InputClass");
   submitInput.classList.add("Button");
   cancelInput.classList.add("Button");
+  cancelInput.classList.add("CancelButton");
 
   inputField.placeholder = "Your Wish";
   inputField.name = "InputField";
