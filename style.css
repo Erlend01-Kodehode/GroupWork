@@ -190,6 +190,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #81ec81;
 }
 
 #ButtonDelete {
@@ -201,4 +202,5 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ff4b4b;
 }
