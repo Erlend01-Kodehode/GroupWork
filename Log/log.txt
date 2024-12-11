@@ -27,6 +27,7 @@
         Regained some cohesion with Github repos
         Restructured HTML/CSS
         Progress with wishlist JS
+        Clarified work distribution
 
     Thursday:
         TODO

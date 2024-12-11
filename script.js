@@ -59,6 +59,14 @@ function showSubmitWindow() {
     modal.close();
     cancelInput.removeEventListener("click", arguments.callee);
   });
+  // Backup cleanup
+  window.addEventListener("keydown", (e) => {
+    if (e == "Escape") {
+      modal.close();
+      inputForm.removeEventListener("submit", arguments.callee);
+      cancelInput.removeEventListener("click", arguments.callee);
+    }
+  });
 }
 
 // Force Event
