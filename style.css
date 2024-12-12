@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
-
 * {
   box-sizing: border-box;
   padding: 0px;
@@ -13,25 +11,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
-
-.Button {
-  font-family: "Roboto", sans-serif;
-  letter-spacing: 1px;
-  font-size: 16px;
-  border: solid 1px black;
-  border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 50%) 0px 0px 4px;
-  height: 30px;
-  padding: 0px 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.JustifyCenter {
-  justify-content: center;
 }
 
 /* Dialog box styling */
@@ -74,41 +53,82 @@ body {
   outline: none;
 }
 
-/* Button Styles */
+/* Generell button style */
 .Button {
-  padding: 10px 20px;
-  margin: 5px;
-  border: none;
-  border-radius: 6px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
   font-size: 16px;
+  /* border: solid 1px black; */
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 50%) 0px 0px 4px;
+  height: 30px;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Button Styles */
 .CancelButton {
   margin-left: 262px;
 }
 
-.Button:first-of-type {
+#WishlistButtonShare {
   background-color: #007bff;
-  color: #ffffff;
 }
 
-.Button:first-of-type:hover {
+#WishlistButtonShare:hover {
   background-color: #0056b3;
 }
 
-.Button:last-of-type {
+#WishlistButtonAdd {
   background-color: #6c757d;
-  color: #ffffff;
 }
 
-.Button:last-of-type:hover {
+#WishlistButtonAdd:hover {
   background-color: #5a6268;
 }
 
-/* Images position */
+.MoveButtonContainer {
+  gap: 3px;
+  display: flex;
+  flex-direction: column;
+}
 
+.MoveButton {
+  border: solid 1px black;
+  border-radius: 5px;
+  height: 15px;
+  min-width: 30px;
+  max-width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Icons for move button
+#MoveButtonUp {
+  background-image: url();
+}
+
+#MoveButtonDown {
+  background-image: url();
+} */
+
+#ButtonEdit {
+  background-color: #81ec81;
+}
+
+#ButtonDelete {
+  background-color: #ff4b4b;
+}
+
+/* Images position */
 #DecorationsTop {
   /* height: 232px; */
   /* width: 997px; */
@@ -119,11 +139,26 @@ body {
   position: absolute;
 }
 
+#Ribbon {
+  top: 30px;
+  right: -50px;
+  height: 200px;
+  position: absolute;
+}
+
+#Balls {
+  top: 100px;
+  left: 80px;
+  height: 200px;
+  z-index: -1;
+  position: absolute;
+}
+
 #LightsLeft {
   top: 30px;
   left: -50px;
   height: 1000px;
-  z-index: -1;
+  z-index: -2;
   position: absolute;
 }
 
@@ -131,15 +166,8 @@ body {
   top: 80px;
   right: 0px;
   height: 1000px;
-  z-index: -1;
+  z-index: -2;
   transform: rotate(-180deg);
-  position: absolute;
-}
-
-#Ribbon {
-  top: 30px;
-  right: -50px;
-  height: 200px;
   position: absolute;
 }
 
@@ -189,10 +217,19 @@ body {
   /* border: solid 1px black; */
 }
 
-#WishlistButtons {
+/* Share/Add buttons */
+#ShareAddButtons {
   /* border: solid 1px black; */
   gap: 10px;
   display: flex;
+}
+
+/* Edit/Delete buttons */
+#EditDeleteButtons {
+  /* border: solid 1px black; */
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 #WishlistItemsContainer {
@@ -216,32 +253,6 @@ body {
   display: flex;
 }
 
-.MoveButtonContainer {
-  gap: 3px;
-  display: flex;
-  flex-direction: column;
-}
-
-.MoveButton {
-  border: solid 1px black;
-  border-radius: 5px;
-  height: 15px;
-  min-width: 30px;
-  max-width: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Icons for move button
-#MoveButtonUp {
-  background-image: url();
-}
-
-#MoveButtonDown {
-  background-image: url();
-} */
-
 #Number {
   font-size: 20px;
   /* border: solid 1px black; */
@@ -262,14 +273,6 @@ body {
   padding: 5px 10px;
 }
 
-#ButtonEdit {
-  background-color: #81ec81;
-}
-
-#ButtonDelete {
-  background-color: #ff4b4b;
-}
-
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 10px;
-}
+} */
