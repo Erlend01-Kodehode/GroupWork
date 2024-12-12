@@ -97,30 +97,31 @@ body {
 }
 
 .MoveButtonContainer {
-  gap: 3px;
   display: flex;
   flex-direction: column;
 }
 
 .MoveButton {
-  border: solid 1px black;
+  /* border: solid 1px black; */
+  background: none;
+  border: none;
   border-radius: 5px;
-  height: 15px;
-  min-width: 30px;
-  max-width: 30px;
+  height: 20px;
+  min-width: 24px;
+  max-width: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
-/* Icons for move button
-.MoveButtonUp {
-  background-image: url();
+.MoveButton:hover {
+  background-color: #cccccc;
 }
 
-.MoveButtonDown {
-  background-image: url();
-} */
+.MoveButton:active {
+  background-color: #aaaaaa;
+}
 
 .ButtonEdit {
   background-color: #81ec81;
