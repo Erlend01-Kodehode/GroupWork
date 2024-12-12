@@ -160,28 +160,28 @@ function buildWishList(wishArr) {
   });
 }
 
-const editBtn = document.getElementById("ButtonEdit");
-editBtn.addEventListener("click", editButton);
+// const editBtn = document.getElementById("ButtonEdit");
+// editBtn.addEventListener("click", editButton);
 
-function editButton() {
-  const wishItem = document.getElementById("TextField");
+// function editButton() {
+//   const wishItem = document.getElementById("TextField");
 
-  if (editBtn.textContent === "Edit") {
-    // Enable editing
-    wishItem.contentEditable = "true";
-    wishItem.focus();
-    editBtn.textContent = "Save";
-  } else {
-    // Save changes
-    wishItem.contentEditable = "false";
-    editBtn.textContent = "Edit";
+//   if (editBtn.textContent === "Edit") {
+//     // Enable editing
+//     wishItem.contentEditable = "true";
+//     wishItem.focus();
+//     editBtn.textContent = "Save";
+//   } else {
+//     // Save changes
+//     wishItem.contentEditable = "false";
+//     editBtn.textContent = "Edit";
 
-    // Update the `wishes` array with the new content
-    const updatedWish = wishItem.textContent;
-    wishes[0] = updatedWish; // Assuming a single wish; expand for multiple items as needed
-    saveStateToLocalStorage();
-  }
-}
+//     // Update the `wishes` array with the new content
+//     const updatedWish = wishItem.textContent;
+//     wishes[0] = updatedWish; // Assuming a single wish; expand for multiple items as needed
+//     saveStateToLocalStorage();
+//   }
+// }
 
 // Force Event
 // showSubmitWindow();
@@ -193,9 +193,9 @@ function saveStateToLocalStorage() {
 }
 
 // Load and display the saved wish on page load
-document.addEventListener("DOMContentLoaded", () => {
-  const wishItem = document.getElementById("TextField");
-  if (wishes.length > 0) {
-    wishItem.textContent = wishes[0]; // Load the first wish; adapt for multiple items as needed
-  }
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   const wishItem = document.getElementById("TextField");
+//   if (wishes.length > 0) {
+//     wishItem.textContent = wishes[0]; // Load the first wish; adapt for multiple items as needed
+//   }
+// });
