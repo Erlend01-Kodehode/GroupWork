@@ -76,7 +76,7 @@ body {
 }
 
 /* Button Styles */
-.CancelButton {
+.ButtonCancel {
   margin-left: 262px;
 }
 
@@ -142,14 +142,14 @@ body {
   position: absolute;
 }
 
-.Ribbon {
+.DecorationRibbon {
   top: 30px;
   right: -50px;
   height: 200px;
   position: absolute;
 }
 
-.Balls {
+.DecorationBalls {
   top: 100px;
   left: 80px;
   height: 200px;
@@ -157,7 +157,21 @@ body {
   position: absolute;
 }
 
-.LightsLeft {
+.DecorationGifts {
+  bottom: 0px;
+  right: 10px;
+  height: 200px;
+  position: absolute;
+}
+
+.DecorationSanta {
+  bottom: 0px;
+  left: 10px;
+  height: 200px;
+  position: absolute;
+}
+
+.DecorationLightsLeft {
   top: 30px;
   left: -50px;
   height: 1000px;
@@ -165,7 +179,7 @@ body {
   position: absolute;
 }
 
-.LightsRight {
+.DecorationLightsRight {
   top: 80px;
   right: 0px;
   height: 1000px;
@@ -293,5 +307,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #aaaaaa;
+  background-color: #bbbbbb;
 }
