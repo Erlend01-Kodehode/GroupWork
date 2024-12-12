@@ -1,0 +1,160 @@
+body {
+  min-height: 100vh;
+  min-width: 100vh;
+  background-color: hwb(4 53% 4%);
+  color: green; /* Default text color for the body */
+  font-family: "Mountains of Christmas";
+  font-size: 40px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 50px;
+  color: green; /* Red for the heading text */
+}
+
+p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: green; /* Green for paragraph text */
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.actions button {
+  padding: 8px 16px;
+  font-size: 30px;
+  border-radius: 10px;
+  background-color: #27ae60;
+  color: white; /* White text on green buttons */
+}
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  grid-gap: 30px;
+  grid-template-columns: repeat(4, 140px);
+  grid-template-rows: repeat(2, calc(140px / 2 * 3));
+}
+
+.card {
+  height: calc(140px / 2 * 3);
+  width: 140px;
+  border-radius: 10px;
+  background-color: hwb(4 53% 4%);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+}
+
+.front-image {
+  width: 200px;
+  height: 200px;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.card .front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .back {
+  background-image: url("images/fate-nero-claudius.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: red;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  transform: rotateY(180deg);
+  color: green; /* Green text for the front of the cards */
+}
+
+/* Additional styling for contrast and visibility */
+.card .back {
+  color: white; /* White text for the back of the cards */
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 30px;
+  border-radius: 12px;
+
+  background-color: rgb(5, 151, 0);
+  color: rgb(255, 255, 255);
+  font-family: "Mountains of Christmas", cursive; /* Holiday-themed font */
+  border: 2px solid gold; /* Golden border for a decorative touch */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 10px gold; /* Festive glowing effect */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4), 0 0 15 gold; /* Enhanced glow on hover */
+}
+
+button:active {
+  transform: scale(0.95); /* Pressed-down effect */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 0 8px gold;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end; /* Move items to the right */
+  align-items: center; /* Align vertically */
+  margin-right: 20px; /* Add spacing from the right edge */
+  gap: 20px; /* Spacing between score and button */
+  padding: 10px 0; /* Add vertical spacing */
+}
+
+.controls .score {
+  font-size: 30px;
+  font-weight: bold;
+  color: green; /* Match theme */
+}
+
+.controls button {
+  padding: 12px 24px;
+  font-size: 20px;
+  border-radius: 12px;
+  background-color: rgb(5, 151, 0);
+  color: white;
+  font-family: "Mountains of Christmas", cursive;
+  border: 2px solid gold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 10px gold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.controls button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4), 0 0 15px gold;
+}
+
+.controls button:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 0 8px gold;
+}

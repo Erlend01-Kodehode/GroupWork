@@ -3,53 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Christmas Wishlist</title>
-    <script defer src="script.js"></script>
+    <title>Wishlist</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Italianno"
+    />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Christmas Wishlist</h1>
-    </header>
-    <div id="MainContainer">
-      <div class="wishlist-container">
-        <h2>My wishlist</h2>
-        <button class="share-button">Share</button>
-        <ul class="wishlist">
-          <li>
-            <span class="task-number">1.</span>
-            <input
-              class="task-name"
-              type="text"
-              value="Helige Håkon's bibel"
-              readonly
-            />
-            <button class="edit-btn">Edit</button>
-            <button class="delete-btn">Delete</button>
-          </li>
-          <li>
-            <span class="task-number">2.</span>
-            <input
-              class="task-name"
-              type="text"
-              value="Helige Håkon's bibel"
-              readonly
-            />
-            <button class="edit-btn">Edit</button>
-            <button class="delete-btn">Delete</button>
-          </li>
-          <li>
-            <span class="task-number">3.</span>
-            <input
-              class="task-name"
-              type="text"
-              value="Helige Håkon's bibel"
-              readonly
-            />
-            <button class="edit-btn">Edit</button>
-            <button class="delete-btn">Delete</button>
-          </li>
-        </ul>
+    <!-- Header -->
+    <div id="HeaderDiv">
+      <p>Christmas Wishlist</p>
+    </div>
+    <!-- Decorations -->
+    <div>
+      <img src="./Images/decorations.png" id="DecorationsTop" />
+      <img src="./Images/ribbon.png" id="Ribbon" />
+      <img src="./Images/balls.png" id="Balls" />
+      <img src="./Images/lights.png" id="LightsLeft" />
+      <img src="./Images/lights.png" id="LightsRight" />
+    </div>
+    <!-- Wishlist -->
+    <div id="WishlistDiv">
+      <!-- Wishlist title -->
+      <p id="WishlistTitle">Wishlist</p>
+      <!-- Share and add buttons -->
+      <div id="ShareAddButtons">
+        <button class="Button" id="WishlistButtonShare">Share</button>
+        <button class="Button" id="WishlistButtonAdd">+ Add</button>
+        <a href="padoru.html" style="text-decoration: none">
+          <button class="Button" id="WishlistButtonPadoru">Padoru!</button>
+        </a>
+      </div>
+      <!-- Container for wishes -->
+      <div id="WishlistItemsContainer">
+        <div class="WishlistItem">
+          <!-- Wish move up/down button -->
+          <div class="MoveButtonContainer">
+            <button class="MoveButton" id="MoveButtonUp"></button>
+            <button class="MoveButton" id="MoveButtonDown"></button>
+          </div>
+          <!-- Wish number -->
+          <p id="Number">1.</p>
+          <!-- Wish text field -->
+          <form id="TextField">Heilage Håkon<br />forsen<br />fors</form>
+          <!-- Edit/delete buttons -->
+          <div id="EditDeleteButtons">
+            <button class="Button" id="ButtonEdit">Edit</button>
+            <button class="Button" id="ButtonDelete">Delete</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
