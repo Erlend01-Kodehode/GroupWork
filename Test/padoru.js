@@ -1,3 +1,8 @@
+window.onload = function () {
+  const audio = document.getElementById("background-sound");
+  audio.play();
+};
+
 let gridContainer = document.querySelector(".grid-container");
 let score = 0;
 let firstCard, secondCard;
