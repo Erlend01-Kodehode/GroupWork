@@ -1,4 +1,5 @@
 const addWishButton = document.querySelector("#WishlistButtonAdd");
+const wishListContainer = document.querySelector("#WishlistItemsContainer");
 
 let wishes = []; // Arr for storing wishes
 
@@ -66,6 +67,67 @@ function showSubmitWindow() {
       inputForm.removeEventListener("submit", arguments.callee);
       cancelInput.removeEventListener("click", arguments.callee);
     }
+  });
+  buildWishList(wishes);
+}
+
+function buildWishList(wishArr) {
+  // Empty List
+  while (wishListContainer.firstChild) {
+    wishListContainer.firstChild.remove();
+  }
+  // Create Elements
+  wishArr.forEach((wish, i) => {
+    const wishContainer = document.createElement("div");
+    wishContainer.classList.add("WishlistItem");
+    // Create Priority Buttons Div
+    const priorityDiv = document.createElement("div");
+    // Create Priority Buttons
+    const priorityButtonUp = document.createElement("button");
+    const priorityButtonDown = document.createElement("button");
+    priorityButtonUp.classList.add("MoveButton");
+    priorityButtonDown.classList.add("MoveButton");
+    // Create Priority Images
+    const priorityButtonUpImg = document.createElement("img");
+    const priorityButtonDownImg = document.createElement("img");
+    // ImageHere
+    // ImageHere
+    // Create Numbering
+    const wishNumber = document.createElement("p");
+    wishNumber.classList.add("WishNumber");
+    wishNumber.textContent = i;
+    // Create Text Field
+    const wishField = document.createElement("input");
+    wishField.classList.add("TextField");
+    wishField.value = wish.description;
+    wishField.readOnly = true;
+    // Create Edit Button
+    const wishEditButton = document.createElement("button");
+    wishEditButton.classList.add("EditButton");
+    wishEditButton.textContent = "Edit";
+    wishEditButton.addEventListener("click", () => {
+      wishes[i].description = wishField.value;
+      saveStateToLocalStorage();
+      wishField.readOnly = !wishField.readOnly;
+      wishEditButton.textContent = wishField.readOnly ? "Edit" : "Save";
+      if (!wishField.readOnly) wishField.focus();
+    });
+    // Create Delete Button
+    const wishDeleteButton = document.createElement("button");
+    wishDeleteButton.classList.add("DeleteButton");
+    wishDeleteButton.textContent = "Delete";
+    // Append
+    wishListContainer.prepend(wishContainer);
+    wishContainer.append(
+      priorityDiv,
+      wishNumber,
+      wishField,
+      wishEditButton,
+      wishDeleteButton
+    );
+    priorityDiv.append(priorityButtonUp, priorityButtonDown);
+    priorityButtonUp.append(priorityButtonUpImg);
+    priorityButtonDown.append(priorityButtonDownImg);
   });
 }
 
