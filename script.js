@@ -146,6 +146,7 @@ function buildWishList(wishArr) {
       renderList(wishes);
       saveStateToLocalStorage();
     });
+
     // Append
     wishListContainer.prepend(wishContainer);
     wishContainer.append(priorityDiv, wishNumber, wishField, wishEditDeleteDiv);
