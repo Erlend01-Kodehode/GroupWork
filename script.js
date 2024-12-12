@@ -4,6 +4,19 @@ const wishListContainer = document.querySelector("#WishlistItemsContainer");
 let wishes = []; // Arr for storing wishes
 console.log(wishes);
 
+const storedTasks = localStorage.getItem("Wishes");
+if (storedTasks) {
+  wishes = JSON.parse(storedTasks);
+  buildWishList(wishes);
+}
+
+function renderList(wishArr) {
+  // Clear local storage if task arr is empty
+  if (wishArr.length === 0) {
+    localStorage.removeItem("Wishes");
+  }
+  buildWishList(wishArr);
+}
 // Open submit modal
 addWishButton.addEventListener("click", () => {
   showSubmitWindow();
@@ -97,12 +110,15 @@ function buildWishList(wishArr) {
     // Create Numbering
     const wishNumber = document.createElement("p");
     wishNumber.classList.add("WishNumber");
-    wishNumber.textContent = i;
+    wishNumber.textContent = i + 1;
     // Create Text Field
     const wishField = document.createElement("input");
     wishField.classList.add("TextField");
     wishField.value = wish.description;
     wishField.readOnly = true;
+    // Create Edit / Delete Div
+    const wishEditDeleteDiv = document.createElement("div");
+    wishEditDeleteDiv.classList.add("EditDeleteButtons");
     // Create Edit Button
     const wishEditButton = document.createElement("button");
     wishEditButton.classList.add("Button");
@@ -120,18 +136,28 @@ function buildWishList(wishArr) {
     wishDeleteButton.classList.add("Button");
     wishDeleteButton.classList.add("DeleteButton");
     wishDeleteButton.textContent = "Delete";
+    // Doesn't work quite right
+    wishDeleteButton.addEventListener("click", () => {
+      if (wishes.length === 1) {
+        console.log(wishes);
+        wishes.pop();
+        console.log(wishes);
+      } else {
+        console.log(wishes);
+        wishes.splice(i, i);
+        console.log(wishes);
+      }
+      renderList(wishes);
+      saveStateToLocalStorage();
+    });
     // Append
     wishListContainer.prepend(wishContainer);
-    wishContainer.append(
-      priorityDiv,
-      wishNumber,
-      wishField,
-      wishEditButton,
-      wishDeleteButton
-    );
+    wishContainer.append(priorityDiv, wishNumber, wishField, wishEditDeleteDiv);
+    wishEditDeleteDiv.append(wishEditButton, wishDeleteButton);
     priorityDiv.append(priorityButtonUp, priorityButtonDown);
     priorityButtonUp.append(priorityButtonUpImg);
     priorityButtonDown.append(priorityButtonDownImg);
+    saveStateToLocalStorage();
   });
 }
 
