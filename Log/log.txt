@@ -10,15 +10,35 @@
         Discussed Figma Designs
 
     Tuesday:
-        TODO
-
+        Continued work on Figma Designs
+        Voted on Figma Design
+        Started work on Website
+            Created HTML
+            Created CSS
+            Created JS
+        Hooked up Github Pages to Main Branch
+        Added Metadata file for links
+            Github
+                Github Repo
+                Github Pages
+            Figma
+        
     Wednesday:
-        TODO
+        Regained some cohesion with Github repos
+        Restructured HTML/CSS
+        Progress with wishlist JS
+        Clarified work distribution
 
     Thursday:
         TODO
 
     Friday:
         TODO
+
+    Saturday:
+        HOPENOT
+
+    Sunday:
+        HOPENOT
 
 [END]
