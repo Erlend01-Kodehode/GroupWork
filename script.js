@@ -1,7 +1,7 @@
 const addWishButton = document.querySelector("#WishlistButtonAdd");
 const wishListContainer = document.querySelector("#WishlistItemsContainer");
 
-let wishes = JSON.parse(localStorage.getItem("Wishes")) || []; // Load saved wishes or initialize an empty array
+let wishes = [];
 console.log(wishes);
 
 // Open submit modal
