@@ -1,7 +1,7 @@
 const addWishButton = document.querySelector("#WishlistButtonAdd");
 const wishListContainer = document.querySelector("#WishlistItemsContainer");
 
-let wishes = [];
+let wishes = []; // Arr for storing wishes
 console.log(wishes);
 
 // Open submit modal
@@ -105,6 +105,7 @@ function buildWishList(wishArr) {
     wishField.readOnly = true;
     // Create Edit Button
     const wishEditButton = document.createElement("button");
+    wishEditButton.classList.add("Button");
     wishEditButton.classList.add("EditButton");
     wishEditButton.textContent = "Edit";
     wishEditButton.addEventListener("click", () => {
@@ -116,6 +117,7 @@ function buildWishList(wishArr) {
     });
     // Create Delete Button
     const wishDeleteButton = document.createElement("button");
+    wishDeleteButton.classList.add("Button");
     wishDeleteButton.classList.add("DeleteButton");
     wishDeleteButton.textContent = "Delete";
     // Append
