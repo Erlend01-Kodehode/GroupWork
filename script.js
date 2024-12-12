@@ -2,6 +2,7 @@ const addWishButton = document.querySelector("#WishlistButtonAdd");
 const wishListContainer = document.querySelector("#WishlistItemsContainer");
 
 let wishes = JSON.parse(localStorage.getItem("Wishes")) || []; // Load saved wishes or initialize an empty array
+console.log(wishes);
 
 // Open submit modal
 addWishButton.addEventListener("click", () => {
@@ -21,6 +22,7 @@ function showSubmitWindow() {
   inputForm.classList.add("FormClass");
   inputField.classList.add("InputClass");
   submitInput.classList.add("Button");
+  submitInput.classList.add("SubmitButton");
   cancelInput.classList.add("Button");
   cancelInput.classList.add("CancelButton");
 
@@ -54,6 +56,7 @@ function showSubmitWindow() {
     modal.close();
     inputForm.removeEventListener("submit", arguments.callee);
     console.log(wishes);
+    buildWishList(wishes);
   });
   // Cancel and close Modal
   cancelInput.addEventListener("click", () => {
@@ -68,7 +71,6 @@ function showSubmitWindow() {
       cancelInput.removeEventListener("click", arguments.callee);
     }
   });
-  buildWishList(wishes);
 }
 
 function buildWishList(wishArr) {
