@@ -96,10 +96,10 @@ body {
   border: solid 1px black;
   border-radius: 15px;
   box-shadow: rgb(0, 0, 0) 0px 0px 5px;
-  height: 75vh;
+  height: 750px;
   width: 750px;
   padding: 15px;
-  top: 140px;
+  top: 150px;
   left: 50%;
   transform: translateX(-50%);
   gap: 15px;
