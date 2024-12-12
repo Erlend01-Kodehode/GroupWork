@@ -1,6 +1,6 @@
 const addWishButton = document.querySelector("#WishlistButtonAdd");
 
-let wishes = []; // Arr for storing wishes
+let wishes = JSON.parse(localStorage.getItem("Wishes")) || []; // Load saved wishes or initialize an empty array
 
 // Open submit modal
 addWishButton.addEventListener("click", () => {
@@ -69,6 +69,29 @@ function showSubmitWindow() {
   });
 }
 
+const editBtn = document.getElementById("ButtonEdit");
+editBtn.addEventListener("click", editButton);
+
+function editButton() {
+  const wishItem = document.getElementById("TextField");
+
+  if (editBtn.textContent === "Edit") {
+    // Enable editing
+    wishItem.contentEditable = "true";
+    wishItem.focus();
+    editBtn.textContent = "Save";
+  } else {
+    // Save changes
+    wishItem.contentEditable = "false";
+    editBtn.textContent = "Edit";
+
+    // Update the `wishes` array with the new content
+    const updatedWish = wishItem.textContent;
+    wishes[0] = updatedWish; // Assuming a single wish; expand for multiple items as needed
+    saveStateToLocalStorage();
+  }
+}
+
 // Force Event
 // showSubmitWindow();
 
@@ -77,3 +100,11 @@ function saveStateToLocalStorage() {
   // Serialize wishes arr to JSON before storing to local storage
   localStorage.setItem("Wishes", JSON.stringify(wishes));
 }
+
+// Load and display the saved wish on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const wishItem = document.getElementById("TextField");
+  if (wishes.length > 0) {
+    wishItem.textContent = wishes[0]; // Load the first wish; adapt for multiple items as needed
+  }
+});
