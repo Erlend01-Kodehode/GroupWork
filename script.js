@@ -139,17 +139,16 @@ function buildWishList(wishArr) {
     // Doesn't work quite right
     wishDeleteButton.addEventListener("click", () => {
       if (wishes.length === 1) {
-        console.log(wishes);
+        // If there's only one item, simply remove it
         wishes.pop();
-        console.log(wishes);
       } else {
-        console.log(wishes);
-        wishes.splice(i, i);
-        console.log(wishes);
+        // Remove the item at index i
+        wishes.splice(i, 1);
       }
       renderList(wishes);
       saveStateToLocalStorage();
     });
+
     // Append
     wishListContainer.prepend(wishContainer);
     wishContainer.append(priorityDiv, wishNumber, wishField, wishEditDeleteDiv);
