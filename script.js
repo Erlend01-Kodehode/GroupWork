@@ -105,8 +105,8 @@ function buildWishList(wishArr) {
     // Create Priority Images
     const priorityButtonUpImg = document.createElement("img");
     const priorityButtonDownImg = document.createElement("img");
-    // ImageHere
-    // ImageHere
+    priorityButtonUpImg.src = "./Images/move-up.png";
+    priorityButtonDownImg.src = "./Images/move-down.png";
     // Create Numbering
     const wishNumber = document.createElement("p");
     wishNumber.classList.add("WishNumber");
@@ -122,7 +122,7 @@ function buildWishList(wishArr) {
     // Create Edit Button
     const wishEditButton = document.createElement("button");
     wishEditButton.classList.add("Button");
-    wishEditButton.classList.add("EditButton");
+    wishEditButton.classList.add("ButtonEdit");
     wishEditButton.textContent = "Edit";
     wishEditButton.addEventListener("click", () => {
       wishes[i].description = wishField.value;
@@ -134,18 +134,14 @@ function buildWishList(wishArr) {
     // Create Delete Button
     const wishDeleteButton = document.createElement("button");
     wishDeleteButton.classList.add("Button");
-    wishDeleteButton.classList.add("DeleteButton");
+    wishDeleteButton.classList.add("ButtonDelete");
     wishDeleteButton.textContent = "Delete";
     // Doesn't work quite right
     wishDeleteButton.addEventListener("click", () => {
       if (wishes.length === 1) {
-        console.log(wishes);
         wishes.pop();
-        console.log(wishes);
       } else {
-        console.log(wishes);
-        wishes.splice(i, i);
-        console.log(wishes);
+        wishes.splice(i, 1);
       }
       renderList(wishes);
       saveStateToLocalStorage();
