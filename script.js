@@ -36,7 +36,7 @@ function showSubmitWindow() {
   inputField.classList.add("InputClass");
   modalButtonsDiv.classList.add("SubmitFieldButtonsDiv");
   submitInput.classList.add("Button");
-  submitInput.classList.add("SubmitButton");
+  submitInput.classList.add("ButtonSubmit");
   cancelInput.classList.add("Button");
   cancelInput.classList.add("ButtonCancel");
 
