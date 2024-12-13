@@ -142,6 +142,7 @@ function buildWishList(wishArr) {
     // Create Text Field
     const wishField = document.createElement("input");
     wishField.classList.add("TextField");
+    wishField.type = "Text";
     wishField.value = wish.description;
     wishField.readOnly = true;
     // Create Edit / Delete Div
@@ -186,17 +187,11 @@ function buildWishList(wishArr) {
   });
 }
 
+// Hooked into the Up and Down buttons
 function arrayMove(wishes, oldPosition, newPosition) {
-  // if (newPosition >= wishes.length) {
-  //   let k = newPosition - wishes.length + 1;
-  //   while (k--) {
-  //     wishes.push(undefined);
-  //   }
-  // }
   wishes.splice(newPosition, 0, wishes.splice(oldPosition, 1)[0]);
   renderList(wishes);
   saveStateToLocalStorage();
-  return wishes; // for testing
 }
 
 // const editBtn = document.getElementById("ButtonEdit");
