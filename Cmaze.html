@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kjeder Du deg?</title>
+    <link rel="stylesheet" href="Cmaze.css">
+</head>
+<body>
+    <div id="labyrinth">
+        <div id="player"></div>
+        <div id="goal"></div>
+        <div id="fgoal"></div>
+        <!-- Startområde -->
+        <div class="wall" style="top: 40px; left: 0px; width: 150px; height: 10px;"></div>
+        <div class="wall" style="top: 40px; left: 270px; width: 90px; height: 10px;"></div>
+        <!-- Vertikale vegger -->
+        <div class="wall" style="top: 160px; right: 285px; width: 10px; height: 200px;"></div>
+        <div class="wall" style="top: 40px; left: 260px; width: 10px; height: 130px;"></div>
+        <div class="wall" style="top: 0px; right: 190px; width: 10px; height: 100px;"></div>
+        <div class="wall" style="top: 100px; right: 350px; width: 10px; height: 265px;"></div>
+        <div class="wall" style="top: 40px; right: 35px; width: 10px; height: 200px;"></div>
+        <div class="wall" style="top: 100px; right: 80px; width: 10px; height: 140px;"></div>
+        <!-- Midtre hindringer -->
+        <div class="wall" style="top: 100px; left: 50px; width: 160px; height: 10px;"></div>
+        <div class="wall" style="top: 300px; right: 50px; width: 150px; height: 10px;"></div>
+        <div class="wall" style="top: 230px; right: 200px; width: 10px; height: 80px;"></div>
+        
+        <!-- Nedre hindringer -->
+        <div class="wall" style="top: 230px; left: 190px; width: 120px; height: 10px;"></div>
+        <div class="wall" style="top: 300px; left: 350px; width: 50px; height: 10px;"></div>
+        <div class="wall" style="top: 160px; right: 140px; width: 150px; height: 10px;"></div>
+        <div class="wall" style="top: 350px; right: 90px; width: 200px; height: 10px;"></div>
+        
+        <!-- Fake wall -->
+        <div class="fgoal" style="top: 60px; left: 190px; width: 120px; height: 10px;"></div>
+
+    
+    <audio id="winSound" src="Sounds/Bass.mp3"></audio>
+    <audio id="fgoal" src="Sounds/fgoal.mp3"></audio>
+    <script src="Cmaze.js" defer></script>
+</body>
+</html>
