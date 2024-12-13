@@ -36,13 +36,16 @@
       <p class="WishlistTitle">Wishlist</p>
       <!-- Share and add buttons -->
       <div class="ShareAddButtons">
-        <button class="Button ButtonShare" onclick="playRR('rick_astley_audio')">Share</button>
+        <button class="Button ButtonShare" id="FunnyButton">Share</button>
         <button class="Button ButtonAdd" id="WishlistButtonAdd">+ Add</button>
+        <a href="padoru.html" style="text-decoration: none">
+          <button class="Button" id="WishlistButtonPadoru"></button>
+        </a>
       </div>
       <!-- Container for wishes -->
       <div class="WishlistItemsContainer" id="WishlistItemsContainer">
-        <div class="WishlistItem">
-          <!-- Wish move up/down button -->
+        <!-- <div class="WishlistItem">
+          Wish move up/down button
           <div class="MoveButtonContainer">
             <button class="MoveButton MoveButtonUp">
               <img src="./Images/move-up.png" />
@@ -51,18 +54,18 @@
               <img src="./Images/move-down.png" />
             </button>
           </div>
-          <!-- Wish number -->
+          Wish number
           <p class="Number">1.</p>
-          <!-- Wish text field -->
+          Wish text field
           <input class="TextField" />
-          <!-- Edit/delete buttons -->
+          Edit/delete buttons
           <div class="EditDeleteButtons">
             <button class="Button ButtonEdit">Edit</button>
             <button class="Button ButtonDelete">Delete</button>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
-    <audio src="./audio/rick_astley.mp3" id="rick_astley_audio" loop></audio>
+    <!-- <audio src="./audio/rick_astley.mp3" id="rick_astley_audio" loop></audio> -->
   </body>
 </html>

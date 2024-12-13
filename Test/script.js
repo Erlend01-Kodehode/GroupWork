@@ -1,51 +1,58 @@
-const taskForm = document.querySelector("#TaskForm");
-const taskInput = document.querySelector("#UserInput");
-const listContainer = document.querySelector("#ListContainer");
-const showCompleted = document.querySelector("#ShowCompleted");
-const sortBy = document.querySelector("#SortBy");
+const addWishButton = document.querySelector("#WishlistButtonAdd");
+const wishListContainer = document.querySelector("#WishlistItemsContainer");
 
-let tasks = [];
+let wishes = []; // Arr for storing wishes
+console.log(wishes);
 
-// Load Data from Local Storage
-showCompleted.checked = localStorage.getItem("ShowCompleted") === "true";
-sortBy.value = localStorage.getItem("SortBy");
-const storedTasks = localStorage.getItem("Tasks");
-if (storedTasks) {
-  tasks = JSON.parse(storedTasks);
-  buildList(tasks);
-}
-
-// Submit Data
-taskForm.addEventListener("submit", (e) => {
-  e.preventDefault(); // Prevent Refresh
-  const formData = new FormData(taskForm); // Save Form Data
-  // Trigger Error if task is empty
-  if (!formData.get("UserInput")) {
-    showError("You can't submit an empty task");
-    return;
-  }
-  // Creates new task object and pushes to var
-  tasks.push({
-    timeStamp: new Date().toLocaleString("en-UK"),
-    description: formData.get("UserInput"),
-    completed: false,
-  });
-  buildList(tasks);
+// Open submit modal
+addWishButton.addEventListener("click", () => {
+  showSubmitWindow();
 });
 
-function showError(message) {
+// Modal window where you input wishes
+function showSubmitWindow() {
   const modal = document.createElement("dialog");
+  const inputForm = document.createElement("form");
+  const inputField = document.createElement("input");
+  const submitInput = document.createElement("button");
+  const cancelInput = document.createElement("button");
 
-  const errorMsg = document.createElement("p");
-  errorMsg.textContent = message;
-  const closeModal = document.createElement("button");
-  closeModal.textContent = "Understood";
+  // Classes
+  modal.classList.add("DialogueWindow");
+  inputForm.classList.add("FormClass");
+  inputField.classList.add("InputClass");
+  submitInput.classList.add("Button");
+  submitInput.classList.add("SubmitButton");
+  cancelInput.classList.add("Button");
+  cancelInput.classList.add("CancelButton");
 
-  modal.append(errorMsg, closeModal);
+  inputField.placeholder = "Your Wish";
+  inputField.name = "InputField";
+  submitInput.textContent = "Submit";
+  cancelInput.textContent = "Cancel";
+
+  // HTML Structure
+  inputForm.append(inputField, submitInput);
+  modal.append(inputForm, cancelInput);
   document.body.append(modal);
 
+  // Render Modal
   modal.showModal();
-  window.addEventListener("click", () => {
+
+  // Submit Form
+  inputForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(inputForm); // Save Form Data
+    // Error if empty
+    if (!formData.get("InputField")) {
+      console.error("The wish input field is empty.");
+      return;
+    }
+    // Push to array
+    wishes.push({
+      description: formData.get("InputField"),
+    });
+    // Close Modal
     modal.close();
     window.removeEventListener("click", arguments.callee);
   });

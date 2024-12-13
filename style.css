@@ -92,6 +92,20 @@ body {
   background-color: #5a6268;
 }
 
+/* Padoru button */
+#WishlistButtonPadoru {
+  /* background-color: #189100; */
+  width: 84px;
+  background: url(Images/fate-nero-claudius.png);
+  background-size: contain;
+  color: rgb(255, 255, 255);
+  background-color: #f85555;
+}
+
+#WishlistButtonPadoru:hover {
+  background-color: #df3e3e;
+}
+
 .MoveButtonContainer {
   display: flex;
   flex-direction: column;

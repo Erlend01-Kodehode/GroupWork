@@ -124,6 +124,12 @@ function buildWishList(wishArr) {
     const priorityButtonDown = document.createElement("button");
     priorityButtonUp.classList.add("MoveButton");
     priorityButtonDown.classList.add("MoveButton");
+    priorityButtonUp.addEventListener("click", () => {
+      arrayMove(wishes, i, i - 1);
+    });
+    priorityButtonDown.addEventListener("click", () => {
+      arrayMove(wishes, i, i + 1);
+    });
     // Create Priority Images
     const priorityButtonUpImg = document.createElement("img");
     const priorityButtonDownImg = document.createElement("img");
@@ -131,11 +137,12 @@ function buildWishList(wishArr) {
     priorityButtonDownImg.src = "./Images/move-down.png";
     // Create Numbering
     const wishNumber = document.createElement("p");
-    wishNumber.classList.add("WishNumber");
+    wishNumber.classList.add("Number");
     wishNumber.textContent = i + 1;
     // Create Text Field
     const wishField = document.createElement("input");
     wishField.classList.add("TextField");
+    wishField.type = "Text";
     wishField.value = wish.description;
     wishField.readOnly = true;
     // Create Edit / Delete Div
@@ -180,6 +187,13 @@ function buildWishList(wishArr) {
   });
 }
 
+// Hooked into the Up and Down buttons
+function arrayMove(wishes, oldPosition, newPosition) {
+  wishes.splice(newPosition, 0, wishes.splice(oldPosition, 1)[0]);
+  renderList(wishes);
+  saveStateToLocalStorage();
+}
+
 // const editBtn = document.getElementById("ButtonEdit");
 // editBtn.addEventListener("click", editButton);
 
@@ -220,8 +234,13 @@ function saveStateToLocalStorage() {
 //   }
 // });
 
+// function playRR(rick_astley_audio) {
+//   let sound = document.getElementById(rick_astley_audio);
+//   sound.play();
+// }
 
-function playRR(rick_astley_audio) {
-  let sound = document.getElementById(rick_astley_audio);
-  sound.play();
-};
+const funnyButton = document.querySelector("#FunnyButton");
+
+funnyButton.addEventListener("click", () => {
+  new Audio("./audio/rick_astley.mp3").play();
+});

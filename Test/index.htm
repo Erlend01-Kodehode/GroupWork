@@ -3,29 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script defer src="script.js"></script>
+    <title>Wishlist</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Italianno"
+    />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>TODO</h1>
-      <form id="TaskForm">
-        <input type="text" name="UserInput" id="UserInput" />
-        <input type="submit" />
-      </form>
-    </header>
-    <div id="Menu">
-      <label for="ShowCompleted">Show Completed Tasks</label>
-      <input type="checkbox" name="ShowCompleted" id="ShowCompleted" />
-      <label for="SortBy">Sort By:</label>
-      <select name="SortBy" id="SortBy">
-        <option value="TimeAsc">Date Added: Ascending</option>
-        <option value="TimeDesc">Date Added: Descending</option>
-        <option value="AlphaAsc">Alphabetically: Ascending</option>
-        <option value="AlphaDesc">Alphabetically: Descending</option>
-      </select>
+    <!-- Header -->
+    <div id="HeaderDiv">
+      <p>Christmas Wishlist</p>
     </div>
-    <div id="ListContainer"></div>
+    <!-- Decorations -->
+    <div>
+      <img src="./Images/decorations.png" id="DecorationsTop" />
+      <img src="./Images/ribbon.png" id="Ribbon" />
+      <img src="./Images/balls.png" id="Balls" />
+      <img src="./Images/lights.png" id="LightsLeft" />
+      <img src="./Images/lights.png" id="LightsRight" />
+    </div>
+    <!-- Wishlist -->
+    <div id="WishlistDiv">
+      <!-- Wishlist title -->
+      <p id="WishlistTitle">Wishlist</p>
+      <!-- Share and add buttons -->
+      <div id="ShareAddButtons">
+        <button class="Button" id="WishlistButtonShare">Share</button>
+        <button class="Button" id="WishlistButtonAdd">+ Add</button>
+        <a href="padoru.html" style="text-decoration: none">
+          <button class="Button" id="WishlistButtonPadoru">Padoru!</button>
+        </a>
+      </div>
+      <!-- Container for wishes -->
+      <div id="WishlistItemsContainer">
+        <div class="WishlistItem">
+          <!-- Wish move up/down button -->
+          <div class="MoveButtonContainer">
+            <button class="MoveButton" id="MoveButtonUp"></button>
+            <button class="MoveButton" id="MoveButtonDown"></button>
+          </div>
+          <!-- Wish number -->
+          <p id="Number">1.</p>
+          <!-- Wish text field -->
+          <form id="TextField">Heilage Håkon<br />forsen<br />fors</form>
+          <!-- Edit/delete buttons -->
+          <div id="EditDeleteButtons">
+            <button class="Button" id="ButtonEdit">Edit</button>
+            <button class="Button" id="ButtonDelete">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
