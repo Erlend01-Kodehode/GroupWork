@@ -20,6 +20,7 @@ function showSubmitWindow() {
   inputForm.classList.add("FormClass");
   inputField.classList.add("InputClass");
   submitInput.classList.add("Button");
+  submitInput.classList.add("ButtonSubmit");
   cancelInput.classList.add("Button");
   cancelInput.classList.add("ButtonCancel");
 
