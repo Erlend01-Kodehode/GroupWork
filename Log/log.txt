@@ -30,7 +30,13 @@
         Clarified work distribution
 
     Thursday:
-        TODO
+        Progressed with JS
+            Wishlist creation
+            Edit buttons
+            Delete buttons
+            Save
+            Load
+        Reworked many ID'd styles with Class styles
 
     Friday:
         TODO
