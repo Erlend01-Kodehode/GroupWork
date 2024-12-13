@@ -1,8 +1,21 @@
 const addWishButton = document.querySelector("#WishlistButtonAdd");
 const wishListContainer = document.querySelector("#WishlistItemsContainer");
 
-let wishes = JSON.parse(localStorage.getItem("Wishes")) || []; // Load saved wishes or initialize an empty array
+let wishes = []; // Arr for storing wishes
 
+const storedTasks = localStorage.getItem("Wishes");
+if (storedTasks) {
+  wishes = JSON.parse(storedTasks);
+  buildWishList(wishes);
+}
+
+function renderList(wishArr) {
+  // Clear local storage if task arr is empty
+  if (wishArr.length === 0) {
+    localStorage.removeItem("Wishes");
+  }
+  buildWishList(wishArr);
+}
 // Open submit modal
 addWishButton.addEventListener("click", () => {
   showSubmitWindow();
@@ -13,6 +26,7 @@ function showSubmitWindow() {
   const modal = document.createElement("dialog");
   const inputForm = document.createElement("form");
   const inputField = document.createElement("input");
+  const modalButtonsDiv = document.createElement("div");
   const submitInput = document.createElement("button");
   const cancelInput = document.createElement("button");
 
@@ -20,9 +34,11 @@ function showSubmitWindow() {
   modal.classList.add("DialogueWindow");
   inputForm.classList.add("FormClass");
   inputField.classList.add("InputClass");
+  modalButtonsDiv.classList.add("SubmitFieldButtonsDiv");
   submitInput.classList.add("Button");
+  submitInput.classList.add("ButtonSubmit");
   cancelInput.classList.add("Button");
-  cancelInput.classList.add("CancelButton");
+  cancelInput.classList.add("ButtonCancel");
 
   inputField.placeholder = "Your Wish";
   inputField.name = "InputField";
@@ -30,8 +46,9 @@ function showSubmitWindow() {
   cancelInput.textContent = "Cancel";
 
   // HTML Structure
-  inputForm.append(inputField, submitInput);
-  modal.append(inputForm, cancelInput);
+  inputForm.append(inputField);
+  modalButtonsDiv.append(submitInput, cancelInput);
+  modal.append(inputForm, modalButtonsDiv);
   document.body.append(modal);
 
   // Render Modal
@@ -53,7 +70,28 @@ function showSubmitWindow() {
     // Close Modal
     modal.close();
     inputForm.removeEventListener("submit", arguments.callee);
+    submitInput.removeEventListener("click", arguments.callee);
     console.log(wishes);
+    buildWishList(wishes);
+  });
+  submitInput.addEventListener("click", (e) => {
+    e.preventDefault();
+    const formData = new FormData(inputForm); // Save Form Data
+    // Error if empty
+    if (!formData.get("InputField")) {
+      console.error("The wish input field is empty.");
+      return;
+    }
+    // Push to array
+    wishes.push({
+      description: formData.get("InputField"),
+    });
+    // Close Modal
+    modal.close();
+    inputForm.removeEventListener("submit", arguments.callee);
+    submitInput.removeEventListener("click", arguments.callee);
+    console.log(wishes);
+    buildWishList(wishes);
   });
   // Cancel and close Modal
   cancelInput.addEventListener("click", () => {
@@ -68,7 +106,6 @@ function showSubmitWindow() {
       cancelInput.removeEventListener("click", arguments.callee);
     }
   });
-  buildWishList(wishes);
 }
 
 function buildWishList(wishArr) {
@@ -90,20 +127,24 @@ function buildWishList(wishArr) {
     // Create Priority Images
     const priorityButtonUpImg = document.createElement("img");
     const priorityButtonDownImg = document.createElement("img");
-    // ImageHere
-    // ImageHere
+    priorityButtonUpImg.src = "./Images/move-up.png";
+    priorityButtonDownImg.src = "./Images/move-down.png";
     // Create Numbering
     const wishNumber = document.createElement("p");
     wishNumber.classList.add("WishNumber");
-    wishNumber.textContent = i;
+    wishNumber.textContent = i + 1;
     // Create Text Field
     const wishField = document.createElement("input");
     wishField.classList.add("TextField");
     wishField.value = wish.description;
     wishField.readOnly = true;
+    // Create Edit / Delete Div
+    const wishEditDeleteDiv = document.createElement("div");
+    wishEditDeleteDiv.classList.add("EditDeleteButtons");
     // Create Edit Button
     const wishEditButton = document.createElement("button");
-    wishEditButton.classList.add("EditButton");
+    wishEditButton.classList.add("Button");
+    wishEditButton.classList.add("ButtonEdit");
     wishEditButton.textContent = "Edit";
     wishEditButton.addEventListener("click", () => {
       wishes[i].description = wishField.value;
@@ -114,45 +155,53 @@ function buildWishList(wishArr) {
     });
     // Create Delete Button
     const wishDeleteButton = document.createElement("button");
-    wishDeleteButton.classList.add("DeleteButton");
+    wishDeleteButton.classList.add("Button");
+    wishDeleteButton.classList.add("ButtonDelete");
     wishDeleteButton.textContent = "Delete";
+    // Doesn't work quite right
+    wishDeleteButton.addEventListener("click", () => {
+      if (wishes.length === 1) {
+        wishes.pop();
+      } else {
+        wishes.splice(i, 1);
+      }
+      renderList(wishes);
+      saveStateToLocalStorage();
+    });
+
     // Append
-    wishListContainer.prepend(wishContainer);
-    wishContainer.append(
-      priorityDiv,
-      wishNumber,
-      wishField,
-      wishEditButton,
-      wishDeleteButton
-    );
+    wishListContainer.append(wishContainer);
+    wishContainer.append(priorityDiv, wishNumber, wishField, wishEditDeleteDiv);
+    wishEditDeleteDiv.append(wishEditButton, wishDeleteButton);
     priorityDiv.append(priorityButtonUp, priorityButtonDown);
     priorityButtonUp.append(priorityButtonUpImg);
     priorityButtonDown.append(priorityButtonDownImg);
+    saveStateToLocalStorage();
   });
 }
 
-const editBtn = document.getElementById("ButtonEdit");
-editBtn.addEventListener("click", editButton);
+// const editBtn = document.getElementById("ButtonEdit");
+// editBtn.addEventListener("click", editButton);
 
-function editButton() {
-  const wishItem = document.getElementById("TextField");
+// function editButton() {
+//   const wishItem = document.getElementById("TextField");
 
-  if (editBtn.textContent === "Edit") {
-    // Enable editing
-    wishItem.contentEditable = "true";
-    wishItem.focus();
-    editBtn.textContent = "Save";
-  } else {
-    // Save changes
-    wishItem.contentEditable = "false";
-    editBtn.textContent = "Edit";
+//   if (editBtn.textContent === "Edit") {
+//     // Enable editing
+//     wishItem.contentEditable = "true";
+//     wishItem.focus();
+//     editBtn.textContent = "Save";
+//   } else {
+//     // Save changes
+//     wishItem.contentEditable = "false";
+//     editBtn.textContent = "Edit";
 
-    // Update the `wishes` array with the new content
-    const updatedWish = wishItem.textContent;
-    wishes[0] = updatedWish; // Assuming a single wish; expand for multiple items as needed
-    saveStateToLocalStorage();
-  }
-}
+//     // Update the `wishes` array with the new content
+//     const updatedWish = wishItem.textContent;
+//     wishes[0] = updatedWish; // Assuming a single wish; expand for multiple items as needed
+//     saveStateToLocalStorage();
+//   }
+// }
 
 // Force Event
 // showSubmitWindow();
@@ -164,9 +213,9 @@ function saveStateToLocalStorage() {
 }
 
 // Load and display the saved wish on page load
-document.addEventListener("DOMContentLoaded", () => {
-  const wishItem = document.getElementById("TextField");
-  if (wishes.length > 0) {
-    wishItem.textContent = wishes[0]; // Load the first wish; adapt for multiple items as needed
-  }
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   const wishItem = document.getElementById("TextField");
+//   if (wishes.length > 0) {
+//     wishItem.textContent = wishes[0]; // Load the first wish; adapt for multiple items as needed
+//   }
+// });

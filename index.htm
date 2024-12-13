@@ -1,52 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wishlist</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italianno"/>
-    <link rel="stylesheet" href="style.css"/>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Italianno"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <!-- Header -->
-    <div id="HeaderDiv">
+    <div class="HeaderDiv">
       <p>Christmas Wishlist</p>
     </div>
     <!-- Decorations -->
     <div>
-      <img src="./Images/decorations.png" id="DecorationsTop" />
-      <img src="./Images/ribbon.png" id="Ribbon" />
-      <img src="./Images/balls.png" id="Balls">
-      <img src="./Images/lights.png" id="LightsLeft" />
-      <img src="./Images/lights.png" id="LightsRight" />
+      <img src="./Images/decorations.png" class="DecorationsTop" />
+      <img src="./Images/ribbon.png" class="DecorationRibbon" />
+      <img src="./Images/balls.png" class="DecorationBalls" />
+      <img src="./Images/gifts.png" class="DecorationGifts" />
+      <img src="./Images/santa.png" class="DecorationSanta" />
+      <img src="./Images/lights.png" class="DecorationLightsLeft" />
+      <img src="./Images/lights.png" class="DecorationLightsRight" />
     </div>
     <!-- Wishlist -->
-    <div id="WishlistDiv">
+    <div class="WishlistDiv">
       <!-- Wishlist title -->
-      <p id="WishlistTitle">Wishlist</p>
+      <p class="WishlistTitle">Wishlist</p>
       <!-- Share and add buttons -->
-      <div id="ShareAddButtons">
-        <button class="Button" id="WishlistButtonShare">Share</button>
-        <button class="Button" id="WishlistButtonAdd">+ Add</button>
+      <div class="ShareAddButtons">
+        <button class="Button ButtonShare">Share</button>
+        <button class="Button ButtonAdd" id="WishlistButtonAdd">+ Add</button>
       </div>
       <!-- Container for wishes -->
-      <div id="WishlistItemsContainer">
+      <div class="WishlistItemsContainer" id="WishlistItemsContainer">
         <div class="WishlistItem">
           <!-- Wish move up/down button -->
           <div class="MoveButtonContainer">
-            <button class="MoveButton" id="MoveButtonUp"></button>
-            <button class="MoveButton" id="MoveButtonDown"></button>
+            <button class="MoveButton MoveButtonUp">
+              <img src="./Images/move-up.png" />
+            </button>
+            <button class="MoveButton MoveButtonDown">
+              <img src="./Images/move-down.png" />
+            </button>
           </div>
           <!-- Wish number -->
-          <p id="Number">1.</p>
+          <p class="Number">1.</p>
           <!-- Wish text field -->
-          <form id="TextField">Heilage Håkon<br>forsen<br>fors</form>
+          <input class="TextField" />
           <!-- Edit/delete buttons -->
-          <div id="EditDeleteButtons">
-            <button class="Button" id="ButtonEdit">Edit</button>
-            <button class="Button" id="ButtonDelete">Delete</button>
+          <div class="EditDeleteButtons">
+            <button class="Button ButtonEdit">Edit</button>
+            <button class="Button ButtonDelete">Delete</button>
           </div>
         </div>
       </div>
