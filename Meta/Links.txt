@@ -1,0 +1,7 @@
+[START]
+ Github Pages: "https://erlend01-kodehode.github.io/GroupWork/"
+
+ Github: "https://github.com/Erlend01-Kodehode/GroupWork"
+
+ Figma: "https://www.figma.com/design/78zZxGyV7l1fL5Dc5gjDzP/Christmas-wishlist?node-id=0-1&node-type=canvas&t=RWmlY5d0bLH1c6ob-0"
+[END]
