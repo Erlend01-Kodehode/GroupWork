@@ -128,11 +128,26 @@ body {
 }
 
 .ButtonSubmit {
-  
+  background-color: #81ec81;
 }
 
 .ButtonCancel {
+  background-color: #ff4b4b;
+}
 
+/* Container for Share/Add buttons */
+.ShareAddButtons {
+  /* border: solid 1px black; */
+  gap: 10px;
+  display: flex;
+}
+
+/* Container for Edit/Delete buttons */
+.EditDeleteButtons {
+  /* border: solid 1px black; */
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Images position */
@@ -240,21 +255,6 @@ body {
   height: 50px;
 }
 
-/* Share/Add buttons */
-.ShareAddButtons {
-  /* border: solid 1px black; */
-  gap: 10px;
-  display: flex;
-}
-
-/* Edit/Delete buttons */
-.EditDeleteButtons {
-  /* border: solid 1px black; */
-  gap: 10px;
-  display: flex;
-  flex-direction: column;
-}
-
 .WishlistItemsContainer {
   /* border: solid 1px black; */
   height: 100%;
@@ -313,4 +313,5 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: #bbbbbb;
+  border-radius: 10px;
 }
