@@ -124,6 +124,12 @@ function buildWishList(wishArr) {
     const priorityButtonDown = document.createElement("button");
     priorityButtonUp.classList.add("MoveButton");
     priorityButtonDown.classList.add("MoveButton");
+    priorityButtonUp.addEventListener("click", () => {
+      arrayMove(wishes, i, i - 1);
+    });
+    priorityButtonDown.addEventListener("click", () => {
+      arrayMove(wishes, i, i + 1);
+    });
     // Create Priority Images
     const priorityButtonUpImg = document.createElement("img");
     const priorityButtonDownImg = document.createElement("img");
@@ -178,6 +184,19 @@ function buildWishList(wishArr) {
     priorityButtonDown.append(priorityButtonDownImg);
     saveStateToLocalStorage();
   });
+}
+
+function arrayMove(wishes, oldPosition, newPosition) {
+  // if (newPosition >= wishes.length) {
+  //   let k = newPosition - wishes.length + 1;
+  //   while (k--) {
+  //     wishes.push(undefined);
+  //   }
+  // }
+  wishes.splice(newPosition, 0, wishes.splice(oldPosition, 1)[0]);
+  renderList(wishes);
+  saveStateToLocalStorage();
+  return wishes; // for testing
 }
 
 // const editBtn = document.getElementById("ButtonEdit");
