@@ -106,6 +106,14 @@ body {
   background-color: #df3e3e;
 }
 
+/* Cmaze */
+#WishlistButtonCmaze {
+  background-image: url("./Images/cmaze.png");
+  background-position: center;
+  background-size: cover;
+  width: 50px;
+}
+
 .MoveButtonContainer {
   display: flex;
   flex-direction: column;
