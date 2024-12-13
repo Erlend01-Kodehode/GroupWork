@@ -234,8 +234,13 @@ function saveStateToLocalStorage() {
 //   }
 // });
 
+// function playRR(rick_astley_audio) {
+//   let sound = document.getElementById(rick_astley_audio);
+//   sound.play();
+// }
 
-function playRR(rick_astley_audio) {
-  let sound = document.getElementById(rick_astley_audio);
-  sound.play();
-};
+const funnyButton = document.querySelector("#FunnyButton");
+
+funnyButton.addEventListener("click", () => {
+  new Audio("./audio/rick_astley.mp3").play();
+});
