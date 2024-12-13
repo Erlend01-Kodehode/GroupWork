@@ -129,10 +129,12 @@ body {
 
 .ButtonSubmit {
   background-color: #81ec81;
+  width: 50%;
 }
 
 .ButtonCancel {
   background-color: #ff4b4b;
+  width: 50%;
 }
 
 /* Container for Share/Add buttons */
@@ -148,6 +150,15 @@ body {
   gap: 10px;
   display: flex;
   flex-direction: column;
+}
+
+/* Container for Submit/Cancel buttons */
+.SubmitFieldButtonsDiv {
+  width: 100%;
+  margin-top: 15px;
+  gap: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Images position */
