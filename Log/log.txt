@@ -39,7 +39,11 @@
         Reworked many ID'd styles with Class styles
 
     Friday:
-        TODO
+        Bugfixing
+        Integrated Minigames
+            Memory Game
+            Labyrinth
+        Added prioritisation buttons
 
     Saturday:
         HOPENOT
