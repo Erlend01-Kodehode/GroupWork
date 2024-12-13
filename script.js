@@ -2,7 +2,6 @@ const addWishButton = document.querySelector("#WishlistButtonAdd");
 const wishListContainer = document.querySelector("#WishlistItemsContainer");
 
 let wishes = []; // Arr for storing wishes
-console.log(wishes);
 
 const storedTasks = localStorage.getItem("Wishes");
 if (storedTasks) {
@@ -27,6 +26,7 @@ function showSubmitWindow() {
   const modal = document.createElement("dialog");
   const inputForm = document.createElement("form");
   const inputField = document.createElement("input");
+  const modalButtonsDiv = document.createElement("div");
   const submitInput = document.createElement("button");
   const cancelInput = document.createElement("button");
 
@@ -34,6 +34,7 @@ function showSubmitWindow() {
   modal.classList.add("DialogueWindow");
   inputForm.classList.add("FormClass");
   inputField.classList.add("InputClass");
+  modalButtonsDiv.classList.add("SubmitFieldButtonsDiv");
   submitInput.classList.add("Button");
   submitInput.classList.add("SubmitButton");
   cancelInput.classList.add("Button");
@@ -45,8 +46,9 @@ function showSubmitWindow() {
   cancelInput.textContent = "Cancel";
 
   // HTML Structure
-  inputForm.append(inputField, submitInput);
-  modal.append(inputForm, cancelInput);
+  inputForm.append(inputField);
+  modalButtonsDiv.append(submitInput, cancelInput);
+  modal.append(inputForm, modalButtonsDiv);
   document.body.append(modal);
 
   // Render Modal
@@ -68,6 +70,26 @@ function showSubmitWindow() {
     // Close Modal
     modal.close();
     inputForm.removeEventListener("submit", arguments.callee);
+    submitInput.removeEventListener("click", arguments.callee);
+    console.log(wishes);
+    buildWishList(wishes);
+  });
+  submitInput.addEventListener("click", (e) => {
+    e.preventDefault();
+    const formData = new FormData(inputForm); // Save Form Data
+    // Error if empty
+    if (!formData.get("InputField")) {
+      console.error("The wish input field is empty.");
+      return;
+    }
+    // Push to array
+    wishes.push({
+      description: formData.get("InputField"),
+    });
+    // Close Modal
+    modal.close();
+    inputForm.removeEventListener("submit", arguments.callee);
+    submitInput.removeEventListener("click", arguments.callee);
     console.log(wishes);
     buildWishList(wishes);
   });
@@ -148,7 +170,7 @@ function buildWishList(wishArr) {
     });
 
     // Append
-    wishListContainer.prepend(wishContainer);
+    wishListContainer.append(wishContainer);
     wishContainer.append(priorityDiv, wishNumber, wishField, wishEditDeleteDiv);
     wishEditDeleteDiv.append(wishEditButton, wishDeleteButton);
     priorityDiv.append(priorityButtonUp, priorityButtonDown);
