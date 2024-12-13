@@ -233,3 +233,9 @@ function saveStateToLocalStorage() {
 //     wishItem.textContent = wishes[0]; // Load the first wish; adapt for multiple items as needed
 //   }
 // });
+
+
+function playRR(rick_astley_audio) {
+  let sound = document.getElementById(rick_astley_audio);
+  sound.play();
+};
