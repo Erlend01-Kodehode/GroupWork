@@ -137,7 +137,7 @@ function buildWishList(wishArr) {
     priorityButtonDownImg.src = "./Images/move-down.png";
     // Create Numbering
     const wishNumber = document.createElement("p");
-    wishNumber.classList.add("WishNumber");
+    wishNumber.classList.add("Number");
     wishNumber.textContent = i + 1;
     // Create Text Field
     const wishField = document.createElement("input");
