@@ -1,72 +1,70 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    overflow: hidden; /* Hindrer scrolling */
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url(Images/Background.jpg);
-    background-size: cover; /* Fyller hele bakgrunnen */
-    background-position: center; /* Sentrerer bildet */
-    background-repeat: no-repeat; /* Hindrer repetisjon */
-    position: relative;
-    margin: 0;
-  }
-  
-  
-  #labyrinth {
-    position: fixed;
-    width: 400px;
-    height: 400px;
-    background-color: #838896;
-    border: 2px solid #000000;
-    overflow: hidden;
-    transform: scale(1.5); /* Juster skalaen for ønsket effekt */
-    transform-origin: center; /* Sentrerer forstørrelsen */
-  }
-  
-  #player {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-image: url('images/Lisse.png');
-    background-size: cover;
-     background-position: center;
-    top: 10px;
-    left: 0;
-  }
-  
-  #goal {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-image: url(Images/Chimney.jpg);
-    background-size: cover;
-     background-position: center;
-    border-radius: 5px;
-    bottom: 10px;
-    right: 10px;
-  }
-  
-  .wall {
-    position: absolute;
-    background-color: #1c9118;
-    border-radius: 0px;  
-    overflow: hidden;
-  }
-  
-  #fgoal {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: #838896;
-    border-radius: 5px;
-    top: 365px;
-    left: 200px;
-  }
-  
-  
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Hindrer scrolling */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(Images/Background.jpg);
+  background-size: cover; /* Fyller hele bakgrunnen */
+  background-position: center; /* Sentrerer bildet */
+  background-repeat: no-repeat; /* Hindrer repetisjon */
+  position: relative;
+  margin: 0;
+}
+
+#labyrinth {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background-color: #838896;
+  border: 2px solid #000000;
+  overflow: hidden;
+  transform: scale(1.5); /* Juster skalaen for ønsket effekt */
+  transform-origin: center; /* Sentrerer forstørrelsen */
+}
+
+#player {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url("Images/Lisse.png");
+  background-size: cover;
+  background-position: center;
+  top: 10px;
+  left: 0;
+}
+
+#goal {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(Images/Chimney.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  bottom: 10px;
+  right: 10px;
+}
+
+.wall {
+  position: absolute;
+  background-color: #1c9118;
+  border-radius: 0px;
+  overflow: hidden;
+}
+
+#fgoal {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #838896;
+  border-radius: 5px;
+  top: 365px;
+  left: 200px;
+}

@@ -8,10 +8,10 @@ let score = 0;
 let firstCard, secondCard;
 let lockBoard = false;
 let cards = [
-  { name: "vanilla", image: "images/nekopara-vanilla.png" },
-  { name: "boo", image: "images/other-boo.png" },
-  { name: "saber", image: "images/saber.gif" },
-  { name: "zerotwo", image: "images/darling-in-the-franxx-zero-two.png" },
+  { name: "vanilla", image: "Images/nekopara-vanilla.png" },
+  { name: "boo", image: "Images/other-boo.png" },
+  { name: "saber", image: "Images/saber.gif" },
+  { name: "zerotwo", image: "Images/darling-in-the-franxx-zero-two.png" },
 ];
 
 let cardArray = [...cards, ...cards];
